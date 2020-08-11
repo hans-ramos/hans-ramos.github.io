@@ -39,22 +39,38 @@
            }
 
           div ul li a div#facebook{
-               background: url(facebook.png) left bottom no-repeat;
-               height:24px;
-               width:24px;
+                background: url(sprite.png)-292px -185px;
+                height:28px;
+                width:28px;
+                border-radius: 50%;
+                background-color: white;
            }
 
            div ul li a div#github{
-               background: url(github.png) left bottom no-repeat;
-               height:24px;
-               width:24px;
+                background: url(sprite.png)-436px -221px;
+                height:28px;
+                width:28px;
+                border-radius: 50%;
+                background-color: white;
            }
 
            div ul li a div#linkedin{
-               background: url(linkedin.png) left bottom no-repeat;
-               height:24px;
-               width:24px;
+                background: url(sprite.png)-184px -293px;
+                height:28px;
+                width:28px;
+                border-radius: 50%;
+                background-color: white;
            }
+
+          div ul li a#link:link{
+                color: rgb(0,255,152);
+                text-decoration: underline;
+            }
+
+            div ul li a#link:visited{
+                color: rgb(46,77,58);
+                text-decoration: underline;
+            }
         </style>
     </head>
 
@@ -68,27 +84,27 @@
                     <a class="nav-item nav-link text-light" href="#works">Past Works</a>
                     <a class="nav-item nav-link text-light" href="#contacts">Contact Links</a>
             </nav>
-            <div class="divider">
+            <div class="divider my-2">
             </div>
             <div class="bg-primary text-light row mx-auto"  id="about">
                 <h3 class="col-12">About Me</h3>
             </div>
-            <div class="divider">
+            <div class="divider my-2">
             </div>
             <div class="bg-primary text-light row mx-auto"  id="education">
                 <h3 class="col-12">Education</h3>
             </div>
-            <div class="divider">
+            <div class="divider my-2">
             </div>
             <div class="bg-primary text-light row mx-auto" id="organizations">
                 <h3 class="col-12">Organizations</h3>
             </div>
-            <div class="divider">
+            <div class="divider my-2">
             </div>        
             <div class="bg-primary text-light row mx-auto"  id="works">
                 <h3 class="col-12">Past Works</h3>
             </div>
-            <div class="divider">
+            <div class="divider my-2">
             </div>
             <div class="bg-primary text-light row mx-auto" id="contacts">
                 <h3 class="col-12">Contact Links</h3>
@@ -153,8 +169,9 @@
                 let parent = document.getElementById("education");
                 let data = doc.data();
                 let school = document.createElement("div");
+                school.classList.add("px-1");
                 let logo = document.createElement("img");
-                logo.classList.add("logo", "float-left")
+                logo.classList.add("logo", "float-left", "m-2");
                 let list = document.createElement("ul");
                 let schoolName = document.createElement("li");
                 schoolName.setAttribute("id", "school");
@@ -253,6 +270,7 @@
                 })
             })
 
+
             function getContacts(doc){
                 let parent = document.getElementById("contacts");
                 let data = doc.data(); 
@@ -267,8 +285,11 @@
                 let li_link = document.createElement("a");
                 let li_div = document.createElement("div");
                 fb_div.setAttribute("id","facebook");
+                fb_div.classList.add("my-2");
                 git_div.setAttribute("id","github");
+                git_div.classList.add("my-2");
                 li_div.setAttribute("id","linkedin");
+                li_div.classList.add("my-2");
 
                 fb_link.href = data.facebook;
                 git_link.href = data.github;
